@@ -1,30 +1,59 @@
-# Li-ion Weld Pattern Reference Atlas v3
+# Li-ion Weld Pattern Reference Atlas v5
 
 Netlify-ready Vite/React app for lithium-ion battery weld-pattern provenance.
 
-## New in v3
+## New in v5
 
-- Add Entry tab for creating atlas entries in the website
-- Entries persist in browser local storage
-- Delete recently added entries
-- Export current atlas to CSV
-- Import atlas data from .xlsx, .xls, or .csv
-- Side-by-side questioned evidence vs known exemplar image review
-- Tailwind pinned to v3.4.17 to avoid Tailwind v4 PostCSS errors on Netlify
-
-## Netlify build settings
-
-Build command: npm run build
-
-Publish directory: dist
-
-Base directory: blank if these files are in the repository root.
+- Add Entry form now includes photo upload for new atlas entries
+- Multiple photos can be attached to one atlas entry
+- Photo previews appear before saving
+- Saved atlas cards display attached photos
+- Custom entry list shows photo count and thumbnails
+- Atlas search includes photo filenames
+- CSV export includes photo count and photo names
+- Photos are stored in browser local storage as data URLs
+- Existing dropdown-assisted entry fields remain available
+- Tailwind pinned to v3.4.17 to avoid the Tailwind v4 PostCSS error
 
 ## Local setup
 
+```bash
 npm install
 npm run dev
+```
+
+## Netlify build settings
+
+Build command:
+
+```bash
+npm run build
+```
+
+Publish directory:
+
+```text
+dist
+```
+
+Base directory should be blank if these files are in the repository root.
+
+## Deploy by GitHub drag-and-drop
+
+Upload these items to the root of the GitHub repo:
+
+```text
+src/
+package.json
+postcss.config.js
+tailwind.config.js
+netlify.toml
+index.html
+README.md
+```
+
+Do not upload `node_modules`, `dist`, or `package-lock.json`.
 
 ## Important
 
-Uploaded images and new entries are local to the browser. Export the atlas CSV to back up or share new entries. For production use, add authentication, server storage, evidence audit logs, and controlled known-exemplar media storage.
+Photos are saved locally in the browser. This static prototype does not upload photos or case data to a server. Large images can fill browser storage. For production use, add authentication, server storage, evidence audit logs, and controlled known-exemplar media storage.
