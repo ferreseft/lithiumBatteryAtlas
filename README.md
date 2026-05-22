@@ -1,38 +1,30 @@
-# Li-ion Weld Pattern Reference Atlas
+# Li-ion Weld Pattern Reference Atlas v3
 
-Netlify-ready Vite/React app for lithium-ion battery weld-pattern provenance, evidence intake, comparison scoring, SOP workflow, and glossary reference.
+Netlify-ready Vite/React app for lithium-ion battery weld-pattern provenance.
+
+## New in v3
+
+- Add Entry tab for creating atlas entries in the website
+- Entries persist in browser local storage
+- Delete recently added entries
+- Export current atlas to CSV
+- Import atlas data from .xlsx, .xls, or .csv
+- Side-by-side questioned evidence vs known exemplar image review
+- Tailwind pinned to v3.4.17 to avoid Tailwind v4 PostCSS errors on Netlify
+
+## Netlify build settings
+
+Build command: npm run build
+
+Publish directory: dist
+
+Base directory: blank if these files are in the repository root.
 
 ## Local setup
 
-```bash
 npm install
 npm run dev
-```
 
-## Netlify deployment
+## Important
 
-### Option A: Drag-and-drop deploy
-
-1. Run:
-   ```bash
-   npm install
-   npm run build
-   ```
-2. Go to Netlify > Sites > Add new site > Deploy manually.
-3. Drag the generated `dist` folder into Netlify.
-
-### Option B: GitHub deploy
-
-1. Create a GitHub repository and push this project.
-2. In Netlify, choose Add new site > Import an existing project.
-3. Select the repository.
-4. Build command: `npm run build`
-5. Publish directory: `dist`
-
-The included `netlify.toml` already sets those values.
-
-## Production notes
-
-- Uploaded evidence images are previewed locally in the browser only.
-- This is a static frontend prototype. It does not store cases or upload files to a server.
-- For production use, add authentication, persistent case storage, audit logs, and controlled exemplar image storage.
+Uploaded images and new entries are local to the browser. Export the atlas CSV to back up or share new entries. For production use, add authentication, server storage, evidence audit logs, and controlled known-exemplar media storage.

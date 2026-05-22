@@ -8,7 +8,4 @@
   background: #f8fafc;
 }
 button, input, select, textarea { font: inherit; }
-@media print {
-  header, .tabs, footer { display: none !important; }
-  body { background: white; }
-}
+@media print { .no-print { display: none !important; } }
